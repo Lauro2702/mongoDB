@@ -1,0 +1,118 @@
+db("sample_mflix").collection("movies").drop();
+db("sample_mflix").collection("comments").drop();
+
+db("sample_mflix").collection("movies").insertMany([
+  {
+    _id: new ObjectId("573a1390f29313caabcd4135"),
+    title: "Star Wars: Episode IV - A New Hope",
+    year: 1977,
+    runtime: 121,
+    genres: ["Action", "Adventure", "Fantasy"],
+    directors: ["George Lucas"],
+    cast: ["Mark Hamill", "Harrison Ford", "Carrie Fisher", "Peter Cushing"],
+    countries: ["USA"],
+    languages: ["English"],
+    imdb: { rating: 8.6, votes: 1400000 },
+    tomatoes: { viewer: { rating: 4.1 } },
+    awards: { wins: 52, nominations: 29 }
+  },
+  {
+    _id: new ObjectId("573a1390f29313caabcd42e8"),
+    title: "The Gladiator",
+    year: 2000,
+    runtime: 155,
+    genres: ["Action", "Adventure", "Drama"],
+    directors: ["Ridley Scott"],
+    cast: ["Russell Crowe", "Joaquin Phoenix", "Connie Nielsen", "Oliver Reed"],
+    countries: ["USA", "UK"],
+    languages: ["English", "Spanish"],
+    imdb: { rating: 8.5, votes: 1500000 },
+    tomatoes: { viewer: { rating: 4.2 } },
+    awards: { wins: 59, nominations: 106 }
+  },
+  {
+    _id: new ObjectId("573a1390f29313caabcd446f"),
+    title: "Jurassic Park",
+    year: 1993,
+    runtime: 127,
+    genres: ["Action", "Adventure", "Sci-Fi"],
+    directors: ["Steven Spielberg"],
+    cast: ["Sam Neill", "Laura Dern", "Jeff Goldblum", "Richard Attenborough"],
+    countries: ["USA"],
+    languages: ["English", "Spanish"],
+    imdb: { rating: 8.2, votes: 1000000 },
+    tomatoes: { viewer: { rating: 3.9 } },
+    awards: { wins: 44, nominations: 27 }
+  },
+  {
+    _id: new ObjectId("573a1390f29313caabcd4803"),
+    title: "The Superbad",
+    year: 2007,
+    runtime: 113,
+    genres: ["Comedy"],
+    directors: ["Greg Mottola"],
+    cast: ["Jonah Hill", "Michael Cera", "Christopher Mintz-Plasse"],
+    countries: ["USA"],
+    languages: ["English"],
+    imdb: { rating: 7.6, votes: 600000 },
+    tomatoes: { viewer: { rating: 3.8 } },
+    awards: { wins: 11, nominations: 24 }
+  },
+  {
+    _id: new ObjectId("573a1390f29313caabcd50e5"),
+    title: "Inception",
+    year: 2010,
+    runtime: 148,
+    genres: ["Action", "Adventure", "Sci-Fi"],
+    directors: ["Christopher Nolan"],
+    cast: ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Elliot Page", "Tom Hardy"],
+    countries: ["USA", "UK"],
+    languages: ["English", "Japanese", "French"],
+    imdb: { rating: 8.8, votes: 2400000 },
+    tomatoes: { viewer: { rating: 4.5 } },
+    awards: { wins: 157, nominations: 220 }
+  },
+  {
+    _id: new ObjectId("573a1390f29313caabcd516c"),
+    title: "The Conjuring",
+    year: 2013,
+    runtime: 112,
+    genres: ["Horror", "Mystery", "Thriller"],
+    directors: ["James Wan"],
+    cast: ["Patrick Wilson", "Vera Farmiga", "Ron Livingston", "Lili Taylor"],
+    countries: ["USA"],
+    languages: ["English", "Latin"],
+    imdb: { rating: 7.5, votes: 530000 },
+    tomatoes: { viewer: { rating: 4.1 } },
+    awards: { wins: 15, nominations: 22 }
+  },
+  {
+    _id: new ObjectId("573a1390f29313caabcd548c"),
+    title: "Indie Short Film",
+    year: 2018,
+    runtime: 95,
+    genres: ["Drama", "Comedy"],
+    directors: ["Diretor A", "Diretor B", "Diretor C"],
+    cast: ["Ator 1", "Ator 2"],
+    countries: ["Brazil", "Argentina"],
+    languages: ["Portuguese", "Spanish"],
+    awards: { wins: 0, nominations: 1 }
+  }
+]);
+
+db("sample_mflix").collection("comments").insertMany([
+  {
+    name: "João Silva",
+    email: "joao@email.com",
+    movie_id: new ObjectId("573a1390f29313caabcd4135"),
+    text: "Um clássico absoluto do cinema!",
+    date: new Date("2023-05-10T14:30:00Z")
+  },
+  {
+    name: "Maria Oliveira",
+    email: "maria@email.com",
+    movie_id: new ObjectId("573a1390f29313caabcd42e8"),
+    text: "Trilha sonora impecável e atuação incrível.",
+    date: new Date("2023-06-15T18:00:00Z")
+  }
+]);

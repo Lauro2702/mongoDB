@@ -1,0 +1,77 @@
+// Active: 1795558190547@@laurobbmce_db_user@null@test
+db("sample_mflix").collection("movies").find({});
+
+db("sample_mflix").collection("movies").find({}, { title: 1, year: 1, _id: 0 });
+
+db("sample_mflix").collection("movies").find({ year: 2000 });
+
+db("sample_mflix").collection("movies").find({ year: { $gt: 2010 } });
+
+db("sample_mflix").collection("movies").find({ genres: "Action" });
+
+db("sample_mflix").collection("movies").find({ runtime: { $gt: 120 } });
+
+db("sample_mflix").collection("movies").find({}).limit(10);
+
+db("sample_mflix").collection("movies").find({}).skip(10);
+
+db("sample_mflix").collection("movies").find({}).sort({ year: 1 });
+
+db("sample_mflix").collection("movies").find({}).sort({ year: -1 });
+
+db("sample_mflix").collection("movies").find({ title: { $regex: "Star", $options: "i" } });
+
+db("sample_mflix").collection("movies").countDocuments({});
+
+db("sample_mflix").collection("movies").countDocuments({ genres: "Comedy" });
+
+db("sample_mflix").collection("movies").find({ "genres.2": { $exists: true } });
+
+db("sample_mflix").collection("movies").find({ "imdb.rating": { $gt: 8 } });
+
+db("sample_mflix").collection("movies").find({ "imdb.rating": { $exists: false } });
+
+db("sample_mflix").collection("movies").find({ year: { $gte: 1990, $lte: 2000 } });
+
+db("sample_mflix").collection("movies").find({ languages: "English" });
+
+db("sample_mflix").collection("movies").find({ "languages.1": { $exists: true } });
+
+db("sample_mflix").collection("movies").find({ directors: "Steven Spielberg" });
+
+
+
+
+db("sample_mflix").collection("movies").find({ "cast.3": { $exists: true } });
+
+db("sample_mflix").collection("movies").find({}, { title: 1, cast: { $slice: 3 }, _id: 0 });
+
+db("sample_mflix").collection("movies").find({ cast: "Leonardo DiCaprio" });
+
+db("sample_mflix").collection("movies").find({ "countries.1": { $exists: true } });
+
+db("sample_mflix").collection("movies").find({ "awards.wins": { $gt: 5 } });
+
+db("sample_mflix").collection("movies").find({ "imdb.votes": { $gt: 10000 } });
+
+db("sample_mflix").collection("movies").find({ "tomatoes.viewer.rating": { $gt: 4 } });
+
+db("sample_mflix").collection("movies").find({}, { title: 1, genres: 1, "imdb.rating": 1, _id: 0 });
+
+db("sample_mflix").collection("comments").find({ name: "João Silva" });
+
+db("sample_mflix").collection("movies").find({}).sort({ "imdb.rating": -1, year: -1 });
+
+db("sample_mflix").collection("movies").find({ runtime: { $gte: 90, $lte: 120 } });
+
+db("sample_mflix").collection("movies").find({ "awards.wins": { $gte: 1 } });
+
+db("sample_mflix").collection("movies").find({ title: { $regex: "^The", $options: "i" } });
+
+db("sample_mflix").collection("movies").find({ genres: { $ne: "Horror" } });
+
+db("sample_mflix").collection("movies").find({ "directors.2": { $exists: true } });
+
+db("sample_mflix").collection("movies").find({ languages: "Spanish" });
+
+db("sample_mflix").collection("movies").find({ "imdb.rating": { $exists: true } }).sort({ "imdb.rating": -1 }).limit(5);
